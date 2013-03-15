@@ -84,4 +84,4 @@ def dump_connection_state
   log 'Connection Dump Complete'
 end
 
-trap('USR2') { dump_connection_state }
+trap('USR2') { dump_connection_state } unless (RbConfig::CONFIG['host_os'] =~ /mswin|mingw|cygwin/)

@@ -2,7 +2,8 @@
 require 'socket'
 require 'fileutils'
 require 'pp'
-require 'syslog'
+require 'rbconfig'
+require 'syslog' unless (RbConfig::CONFIG['host_os'] =~ /mswin|mingw|cygwin/)
 
 ep = File.expand_path(File.dirname(__FILE__))
 
